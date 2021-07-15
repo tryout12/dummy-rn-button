@@ -1,0 +1,30 @@
+{
+  "name": "dummy-rn-button",
+  "version": "0.0.1",
+  "description": "dummy desc",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [ "lib/*" ],
+  "scripts": {
+    "build": "tsc --project ./tsconfig.json",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "peerDep": "npm install --no-save react react-native @types/react @types/react-native"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tryout12/dummy-rn-button.git"
+  },
+  "keywords": [
+    "dummy",
+    "button"
+  ],
+  "author": "tryout",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tryout12/dummy-rn-button/issues"
+  },
+  "homepage": "https://github.com/tryout12/dummy-rn-button#readme",
+  "devDependencies": {
+    "typescript": "^4.3.5"
+  }
+}
