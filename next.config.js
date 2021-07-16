@@ -2,6 +2,7 @@ module.exports = {
   reactStrictMode: true,
   assetPrefix: '.',
   images: {
-    loader: 'imgix'
+    loader: 'imgix',
+    path: ''
   },
 }
