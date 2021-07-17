@@ -6,6 +6,7 @@ module.exports = {
   assetPrefix: isProd ? baseUrl : '',
   publicRuntimeConfig: {
     baseUrl: isProd ? baseUrl : '',
+    routerBase: isProd ? '/dummy-rn-button' : '',
   },
   images: {
     loader: 'imgix',

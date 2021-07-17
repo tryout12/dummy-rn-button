@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.css'
 import getConfig from 'next/config'
 import Link from 'next/link'
 
-const { publicRuntimeConfig:{baseUrl} } = getConfig()
+const { publicRuntimeConfig:{baseUrl,routerBase} } = getConfig()
 
 export default function Home() {
   return (
@@ -30,7 +30,7 @@ export default function Home() {
             <h2>Documentation &rarr;</h2>
             <p>Find in-depth information about Next.js features and API.</p>
           </a> */}
-          <Link href="/page1">
+          <Link href={`${routerBase}/page1`}>
             <div className={styles.card}>
               <h2>Documentation &rarr;</h2>
               <p>Find in-depth information about Next.js features and API.</p>
