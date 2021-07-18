@@ -2,16 +2,15 @@ import '../styles/globals.css'
 import Image from 'next/image'
 import Head from 'next/head'
 import type { AppProps } from 'next/app'
-import { useRouter } from 'next/router'
 import styles from '../styles/Home.module.css'
 import getConfig from 'next/config'
 import { pageHead } from '../config/pageHead'
 import { fallback } from '../config/pageHead/default'
 
-const { publicRuntimeConfig:{baseUrl} } = getConfig()
+const { publicRuntimeConfig: { baseUrl } } = getConfig()
 
-function MyApp({ Component, pageProps }: AppProps) {
-  const { pathname } = useRouter();
+function MyApp({ Component, pageProps, router }: AppProps) {
+  const { pathname } = router;
   const head = pageHead[pathname] || fallback;
   console.log('pathname',pathname)
   return (
@@ -33,10 +32,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         </p>
 
         <div className={styles.grid}>
-          {/* <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a> */}
           <Component {...pageProps} />
         </div>
       </main>

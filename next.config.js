@@ -7,7 +7,6 @@ module.exports = {
   basePath: isProd ? '/dummy-rn-button' : '',
   publicRuntimeConfig: {
     baseUrl: isProd ? baseUrl : '',
-    routerBase: isProd ? '/dummy-rn-button' : '',
   },
   images: {
     loader: 'imgix',
