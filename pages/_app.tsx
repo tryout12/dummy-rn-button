@@ -6,6 +6,8 @@ import styles from '../styles/Home.module.css'
 import getConfig from 'next/config'
 import { pageHead } from '../config/pageHead'
 import { fallback } from '../config/pageHead/default'
+import { ThemeProvider } from '../providers/ThemeProvider'
+import { ThemeChanger } from '../components/ThemeChanger'
 
 const { publicRuntimeConfig: { baseUrl } } = getConfig()
 
@@ -14,6 +16,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   const head = pageHead[pathname] || fallback;
   console.log('pathname',pathname)
   return (
+    <ThemeProvider>
     <div className={styles.container}>
       <Head>
         <title>{head.title}</title>
@@ -30,6 +33,9 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           Get started by editing{' '}
           <code className={styles.code}>pages/index.js</code>
         </p>
+
+        <ThemeChanger title={'light'}/>
+        <ThemeChanger title={'dark'}/>
 
         <div className={styles.grid}>
           <Component {...pageProps} />
@@ -49,6 +55,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         </a>
       </footer>
     </div>
+    </ThemeProvider>
   )
 }
 export default MyApp
